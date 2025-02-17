@@ -1,9 +1,4 @@
-function cashOut(money) {
-  if (typeof money !== "number" || money < 0) {
-    return "Invalid";
-  }
-  return (money * 1.75) / 100;
-}
+// Problem-02 : Detect email  valid or not
 
 function validEmail(email) {
   if (typeof email !== "string") {
@@ -19,3 +14,4 @@ function validEmail(email) {
     return true;
   }
 }
+console.log(validEmail("he ro@alom.com"));
