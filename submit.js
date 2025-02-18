@@ -47,14 +47,36 @@ function electionResult(votes) {
 }
 
 function isBestFriend(f1, f2) {
-  const objectKeys = ["name", "roll", "bestFriend"];
+  const objectKeys = "name,roll,bestFriend";
   if (
-    (typeof f1 !== "object" || typeof f2 !== "object") &&
-    (Object.keys(f1) !== objectKeys || Object.keys(f2) !== objectKeys)
+    typeof f1 !== "object" ||
+    typeof f2 !== "object" ||
+    Object.keys(f1).toString() !== objectKeys ||
+    Object.keys(f2).toString() !== objectKeys
   ) {
     return "Invalid";
   }
   const isBestFriend1 = f1.roll === f2.bestFriend ? true : false;
   const isBestFriend2 = f2.roll === f1.bestFriend ? true : false;
   return isBestFriend1 && isBestFriend2 ? true : false;
+}
+
+function calculateWatchTime(times) {
+  if (!Array.isArray(times)) {
+    return "Invalid";
+  }
+  let totalSeconds = 0;
+  for (const time of times) {
+    if (typeof time !== "number") {
+      return "Invalid";
+    }
+    totalSeconds += time;
+  }
+  let hour = 0;
+  let minute = 0;
+  let second = 0;
+  hour = Math.floor(totalSeconds / 3600);
+  minute = Math.floor((totalSeconds % 3600) / 60);
+  second = totalSeconds % 60;
+  return { hour, minute, second };
 }

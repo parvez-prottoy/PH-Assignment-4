@@ -1,10 +1,12 @@
 // Problem-04: Detect The Perfect Best Friend
 
 function isBestFriend(f1, f2) {
-  const objectKeys = ["name", "roll", "bestFriend"];
+  const objectKeys = "name,roll,bestFriend";
   if (
-    (typeof f1 !== "object" || typeof f2 !== "object") &&
-    (Object.keys(f1) !== objectKeys || Object.keys(f2) !== objectKeys)
+    typeof f1 !== "object" ||
+    typeof f2 !== "object" ||
+    Object.keys(f1).toString() !== objectKeys ||
+    Object.keys(f2).toString() !== objectKeys
   ) {
     return "Invalid";
   }
@@ -13,5 +15,8 @@ function isBestFriend(f1, f2) {
   return isBestFriend1 && isBestFriend2 ? true : false;
 }
 console.log(
-  isBestFriend("hashem", { name: "kashem", roll: 2, bestFriend: 11 })
+  isBestFriend(
+    { name: "kashem", roll: 2, bestFriend: 11 },
+    "Kashem er Kono Bondhu Nai"
+  )
 );
