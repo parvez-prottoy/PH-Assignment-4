@@ -16,4 +16,4 @@ function calculateWatchTime(times) {
   let second = totalSeconds % 60;
   return { hour, minute, second };
 }
-console.log(calculateWatchTime([100, 3800]));
+console.log(calculateWatchTime([100, 3800, "90"]));

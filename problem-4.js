@@ -16,7 +16,7 @@ function isBestFriend(f1, f2) {
 }
 console.log(
   isBestFriend(
-    { name: "kashem", roll: 2, bestFriend: 11 },
-    "Kashem er Kono Bondhu Nai"
+    { name: "hashem", roll: 1, bestFriend: 1 },
+    { name: "kashem", roll: 1, bestFriend: 1 }
   )
 );

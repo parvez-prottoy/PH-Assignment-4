@@ -9,12 +9,10 @@ function electionResult(votes) {
   for (const vote of votes) {
     if (typeof vote !== "string") {
       return "Invalid";
-    } else {
-      if (vote === "mango") {
-        mongoCount++;
-      } else if (vote === "banana") {
-        bananaCount++;
-      }
+    } else if (vote === "mango") {
+      mongoCount++;
+    } else if (vote === "banana") {
+      bananaCount++;
     }
   }
   if (mongoCount > bananaCount) {
@@ -25,4 +23,4 @@ function electionResult(votes) {
     return "Draw";
   }
 }
-console.log(electionResult(["mango", "BananA", true, 0]));
+console.log(electionResult(["mango", "BananA", "na vote", true]));

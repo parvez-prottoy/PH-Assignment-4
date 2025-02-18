@@ -29,12 +29,10 @@ function electionResult(votes) {
   for (const vote of votes) {
     if (typeof vote !== "string") {
       return "Invalid";
-    } else {
-      if (vote === "mango") {
-        mongoCount++;
-      } else if (vote === "banana") {
-        bananaCount++;
-      }
+    } else if (vote === "mango") {
+      mongoCount++;
+    } else if (vote === "banana") {
+      bananaCount++;
     }
   }
   if (mongoCount > bananaCount) {
@@ -72,11 +70,8 @@ function calculateWatchTime(times) {
     }
     totalSeconds += time;
   }
-  let hour = 0;
-  let minute = 0;
-  let second = 0;
-  hour = Math.floor(totalSeconds / 3600);
-  minute = Math.floor((totalSeconds % 3600) / 60);
-  second = totalSeconds % 60;
+  let hour = Math.floor(totalSeconds / 3600);
+  let minute = Math.floor((totalSeconds % 3600) / 60);
+  let second = totalSeconds % 60;
   return { hour, minute, second };
 }
