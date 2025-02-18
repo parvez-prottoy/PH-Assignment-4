@@ -1,4 +1,4 @@
-# JS Assignment Tasks
+# JS Assignment Tasks Part 1
 
 ## Problem-01 : Calculate the cash-out Charge
 
